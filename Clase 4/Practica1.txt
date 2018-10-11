@@ -1,0 +1,99 @@
+Clase Capitulo
+
+	Privado Definir numero Como Entero
+	Privado Definir nombre Como Caracter
+	Privado Definir descripcion Como Caracter
+	Privado Definir cant_paginas Como Entero
+
+	Metodo Capitulo()
+		numero = 0
+		nombre = "Capitulo X"
+		descripcion = "Capitulo X del Libro"
+		cant_paginas = 0
+	Fin Metodo
+
+	Metodo Capitulo(numero_n, nombre_n, descripcion_n, cant_paginas_n)
+		numero = numero_n
+		nombre = nombre_n
+		descripcion = descripcion_n
+		cant_paginas = cant_paginas_n
+	Fin Metodo
+
+Fin Metodo
+
+Clase Libro
+
+	Privado Definir nombre Como Caracter
+	Privado Definir autor Como Caracter
+	Privado Definir editorial Como Caracter
+	Privado Definir fecha_publicacion Como Caracter
+	Privado Definir tipo Como Caracter
+	Privado Definir capitulos Como Coleccion<Capitulo>
+	Privado Definir ilustrado Como Logico
+	Privado Definir precio Como Real
+
+	Metodo Libro()
+		nombre = "To be Announced"
+		autor = "To be Announced"
+		editorial = "To be Decided"
+		fecha_publicacion = "01/01/2000"
+		tipo = "To be Announced"
+		ilustrado = Falso
+		precio = 0
+	Fin Metodo
+
+	Publico Metodo Libro(nombre_libro, autor_libro, editorial_libro, fecha_publicacion_libro, tipo_libro, ilustrado_libro, precio_libro)
+		nombre = nombre_libro
+		autor = autor_libro
+		editorial = editorial_libro
+		fecha_publicacion = fecha_publicacion_libro
+		tipo = tipo_libro
+		ilustrado = ilustrado_libro
+		precio = precio_libro
+	Fin Metodo
+
+	Publico Metodo calculo_precio()
+		Definir iva Como Real
+
+		iva = precio * 0.12
+		precio = precio + iva
+		Retornar precio
+	Fin Metodo
+
+	Publico Metodo Salida()
+		Mostrar "Nombre del Libro: " nombre
+		Mostrar "Nombre del Autor: " autor
+		Mostrar "Nombre de la editorial: " editorial
+		Mostrar "Fecha de Publicacion: " fecha_publicacion
+		Preotegido "Tipo de Libro: " tipo
+		Si (ilustrado = Verdadero) Entonces
+			{Mostrar "Este Libro Tiene Ilustraciones"}
+		Sino
+			{Mostrar "Este Libro no Tiene Ilustraciones"}
+		Mostrar "Precio del Libro: " calculo_precio()
+		Mostrar ""
+	Fin Metodo
+
+	Publico Metodo agregarCapitulo(cap)
+		capitulos.agregar(cap)
+	Fin Metodo
+
+Fin Clase
+
+Algoritmo Registro_Biblioteca
+
+	Definir libro1, libro2 Como Libro
+	Definir capl1, capl2 Como Capitulo
+
+	libro1 = Nuevo Libro()
+	libro2 = Nuevo Libro("El Castillo Volador", "Hayao Miyazaki", "Ghibli", "02/08/1986", "Fantasia", Verdadero, 500)
+	capl1 = Nuevo Capitulo()
+	capl2 = Nuevo Capitulo(1, "El Comienzo", "Las Aventuras de Nuestros Heroes Comienza", 30)
+
+	libro1.agregarCapitulo(capl1)
+	libro2.agregarCapitulo(capl2)
+
+	libro1.Salida()
+	libro2.Salida()
+
+Fin Algoritmo

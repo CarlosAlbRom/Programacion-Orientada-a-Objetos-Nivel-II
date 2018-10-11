@@ -1,0 +1,6 @@
+[0125/212557.804:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Se intentó obtener acceso a un proceso que está cerrándose. (0xc000010a)
+[0125/212557.820:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits32>]: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0125/212557.821:ERROR:process_info.cc(566)] ReadProcessData failed
+[0125/212557.852:ERROR:process_reader_win.cc(242)] ReadMemory at 0x6a97dec8 of 12 bytes failed: Sólo se completó una parte de una solicitud ReadProcessMemory o WriteProcessMemory. (0x12B)
+[0125/212557.853:WARNING:process_snapshot_win.cc(69)] ReadMemory ExceptionInformation failed
+[0125/212557.853:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
